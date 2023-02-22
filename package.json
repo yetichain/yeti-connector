@@ -1,9 +1,9 @@
 {
-  "name": "enkrypt-connectors",
+  "name": "yeti-connector",
   "packageManager": "yarn@3.2.2",
-  "description": "Various connectors necessary for Enkrypt",
-  "repository": "git@github.com:enkryptcom/enkrypt-connectors.git",
-  "author": "kvhnuke <10602065+kvhnuke@users.noreply.github.com>",
+  "description": "Various connectors necessary for YETI",
+  "repository": "git@github.com:yetichain/yeti-connector.git",
+  "author": "YETI <info@yetichain.com>",
   "license": "MIT",
   "private": true,
   "workspaces": [
