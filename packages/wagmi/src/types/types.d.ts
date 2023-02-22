@@ -1,5 +1,5 @@
 import { Ethereum } from "@wagmi/core";
 
-export interface EnkryptEthereum extends Ethereum {
-  isEnkrypt?: boolean;
+export interface YetiEthereum extends Ethereum {
+  isYeti?: boolean;
 }
