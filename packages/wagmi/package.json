@@ -1,10 +1,10 @@
 {
-  "name": "@enkryptcom/connector-wagmi",
+  "name": "@yetichain/connector-wagmi",
   "version": "0.1.2",
-  "description": "A wagmi compatible wallet connector for Enkrypt",
+  "description": "A wagmi compatible wallet connector for YETI",
   "repository": {
     "type": "git",
-    "url": "https://github.com/enkryptcom/enkrypt-connectors.git",
+    "url": "https://github.com/yetichain/yeti-connector.git",
     "directory": "packages/wagmi"
   },
   "main": "dist/index.js",
