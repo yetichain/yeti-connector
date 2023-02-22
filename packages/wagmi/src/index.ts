@@ -33,7 +33,7 @@ export class YetiConnector extends InjectedConnector {
 
   private UNSTABLE_shimOnConnectSelectAccount: YetiConnectorOptions["UNSTABLE_shimOnConnectSelectAccount"];
 
-  constructor({ chains, options }: EnkryptConnectorConstructor) {
+  constructor({ chains, options }: YetiConnectorConstructor) {
     const _options = {
       name: "Yeti",
       shimDisconnect: false,
@@ -111,7 +111,7 @@ export class YetiConnector extends InjectedConnector {
   async getProvider() {
     if (typeof window !== "undefined") {
       const maybeProvider = this.findProvider(
-        (window as any).enkrypt?.providers.ethereum
+        (window as any).yeti?.providers.ethereum
       );
 
       if (typeof maybeProvider !== "boolean") {
