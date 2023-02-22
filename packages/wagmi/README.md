@@ -1,11 +1,11 @@
 # wagmi
 
-A wagmi compatible wallet connector for [Enkrypt](https://www.enkrypt.com).
+A wagmi compatible wallet connector for [YETI](https://www.yetichain.com).
 
 ## Usage
 
 ```
-import { EnkryptConnector } from "@enkryptcom/connector-wagmi";
+import { YetiConnector } from "@yetichain/connector-wagmi";
 import {
   createClient,
   defaultChains,
@@ -14,6 +14,6 @@ import {
 const client = createClient({
   autoConnect: true,
   connectors: [
-    new EnkryptConnector({ chains: defaultChains })
+    new YetiConnector({ chains: defaultChains })
 });
 ```
