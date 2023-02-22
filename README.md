@@ -1,2 +1,2 @@
-# enkrypt-connectors
-Various connectors necessary for Enkrypt
+# YETI-connector
+Various connectors necessary for YETI
