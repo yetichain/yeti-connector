@@ -7,9 +7,9 @@ import {
   ResourceUnavailableError,
   RpcError,
 } from "@wagmi/core";
-import { EnkryptEthereum } from "./types/types.d";
+import { YetiEthereum } from "./types/types.d";
 
-type EnkryptConnectorOptions = Pick<
+type YetiConnectorOptions = Pick<
   InjectedConnectorOptions,
   "shimChainChangedDisconnect" | "shimDisconnect"
 > & {
@@ -19,23 +19,23 @@ type EnkryptConnectorOptions = Pick<
   UNSTABLE_shimOnConnectSelectAccount?: boolean;
 };
 
-interface EnkryptConnectorConstructor {
+interface YetiConnectorConstructor {
   chains: Chain[];
-  options?: EnkryptConnectorOptions;
+  options?: YetiConnectorOptions;
 }
 
-export class EnkryptConnector extends InjectedConnector {
-  readonly id = "enkrypt";
+export class YetiConnector extends InjectedConnector {
+  readonly id = "yeti";
 
   readonly ready = true;
 
-  private provider: EnkryptEthereum | undefined;
+  private provider: YetiEthereum | undefined;
 
-  private UNSTABLE_shimOnConnectSelectAccount: EnkryptConnectorOptions["UNSTABLE_shimOnConnectSelectAccount"];
+  private UNSTABLE_shimOnConnectSelectAccount: YetiConnectorOptions["UNSTABLE_shimOnConnectSelectAccount"];
 
   constructor({ chains, options }: EnkryptConnectorConstructor) {
     const _options = {
-      name: "Enkrypt",
+      name: "Yeti",
       shimDisconnect: false,
       shimChainChangeDisconnect: false,
       ...options,
@@ -50,13 +50,13 @@ export class EnkryptConnector extends InjectedConnector {
   async connect(connectionOptions?: { chainId?: number }): Promise<{
     account: string;
     chain: { id: number; unsupported: boolean };
-    provider: EnkryptEthereum;
+    provider: YetiEthereum;
   }> {
     try {
       const provider = await this.getProvider();
       if (!provider) {
         if (window) {
-          window.open("https://www.enkrypt.com", "_blank");
+          window.open("https://www.yetichain.com", "_blank");
           throw new ConnectorNotFoundError();
         }
       }
@@ -122,13 +122,13 @@ export class EnkryptConnector extends InjectedConnector {
   }
 
   // eslint-disable-next-line class-methods-use-this
-  private getReady(ethereum?: EnkryptEthereum): EnkryptEthereum | boolean {
-    const isEnkrypt = !!ethereum?.isEnkrypt;
-    if (!isEnkrypt) return true;
+  private getReady(ethereum?: YetiEthereum): YetiEthereum | boolean {
+    const isYeti = !!ethereum?.isYeti;
+    if (!isYeti) return true;
     return ethereum;
   }
 
-  private findProvider(ethereum?: EnkryptEthereum): EnkryptEthereum | boolean {
+  private findProvider(ethereum?: YetiEthereum): YetiEthereum | boolean {
     if (ethereum?.providers) return ethereum.providers.find(this.getReady);
     return this.getReady(ethereum);
   }
